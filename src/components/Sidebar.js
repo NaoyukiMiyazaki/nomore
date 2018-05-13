@@ -9,7 +9,7 @@ export default class Sidebar extends Component {
           {Object.keys(this.props.components).map(key => (
             <li key={key}>
               <a
-                href={`#${key}`}
+                href="#"
                 onClick={() => {
                   this.props.changeComponent(key)
                 }}
