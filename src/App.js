@@ -1,21 +1,38 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
+
+import Main from './components/Main'
+import Sidebar from './components/Sidebar'
+
+import components from './Components'
 
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      components: components,
+      currentComponent: 'button',
+    }
+  }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">nomoremarkup</h1>
+          <h1 className="App-title">
+            <a href="/">nomoremarkup</a>
+          </h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Sidebar
+          {...this.state}
+          changeComponent={component => {
+            this.setState({ currentComponent: component })
+          }}
+        />
+        <Main {...this.state} />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
