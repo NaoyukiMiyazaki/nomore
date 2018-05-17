@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ShadowDOM from './ShadowDOM'
 import './Main.css'
 
 export default class Main extends Component {
@@ -11,10 +12,9 @@ export default class Main extends Component {
             {this.props.components[this.props.currentComponent].map(
               component => (
                 <li key={component.id}>
-                  <div>{component.code}</div>
-                  <div
-                    dangerouslySetInnerHTML={{ __html: component.content }}
-                  />
+                  <div>
+                    <ShadowDOM html={component.html} css={component.css} />
+                  </div>
                 </li>
               )
             )}
