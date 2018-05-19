@@ -1,0 +1,37 @@
+.Modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Modal-overlay {
+    z-index: 10;
+    position: fixed;
+    top: -10vh;
+    left: -10vw;
+    width: 120vw;
+    height: 120vh;
+    background: rgba(0,0,0,.5);
+}
+
+.Modal-container {
+    z-index: 20;
+    position: relative;
+    width: 80%;
+    max-height: 80%;
+    overflow: auto;
+    background: #fff;
+    padding: .5em;
+}
+
+.Modal-container pre {
+    padding: 1em;
+    border: 1px solid #000;
+    overflow: auto;
+}

@@ -8,14 +8,9 @@ export default class Sidebar extends Component {
         <ul>
           {Object.keys(this.props.components).map(key => (
             <li key={key}>
-              <a
-                href="#"
-                onClick={() => {
-                  this.props.changeComponent(key)
-                }}
-              >
-                {key}
-              </a>
+              <button onClick={() => {
+                this.props.changeComponent(key)
+              }}>{key}</button>
             </li>
           ))}
         </ul>
